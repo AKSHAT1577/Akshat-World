@@ -1,0 +1,76 @@
+.fit-cover {
+  object-fit: cover;
+}
+
+
+
+
+/* added for extra effects */
+
+/* -----------------------------------*\
+  #BACK TO TOP
+\*----------------------------------- */
+
+.back-top-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-image: white;
+  place-items: center;
+  font-size: 2.1rem;
+  clip-path: polygon(0% 0%, 70% 0, 100% 30%, 100% 100%, 0 100%);
+  opacity: 0;
+  transition: 250ms ease;
+  z-index: 4;
+}
+
+.back-top-btn.active {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+/* -----------------------------------*\
+  #CUSTOM CURSOR
+\*----------------------------------- */
+
+.cursor {
+  display: none;
+}
+
+/* *
+   * CUSTOM CURSOR */
+
+   @media (min-width: 768px) {
+    .cursor {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 6;
+      transition: 250ms ease;
+      transition-property: opacity, transform;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    body:hover .cursor {
+      opacity: 0.5;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    body .cursor.hovered {
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0.75;
+    }
+  }
+  
